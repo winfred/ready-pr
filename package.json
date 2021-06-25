@@ -1,0 +1,28 @@
+{
+  "name": "winfred.ready-pr",
+  "description": "Ready label",
+  "version": "1.0.0",
+  "author": "winfred",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/winfred/ready-pr"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "aha-cli": "1.9.9"
+  },
+  "ahaExtension": {
+    "contributes": {
+      "events": {
+        "prListener": {
+          "title": "PR Listener",
+          "entryPoint": "src/eventHandlers/prListener.js",
+          "handles": [
+            "aha-develop.github.pr.labeled",
+            "aha-develop.github.pr.unlabeled"
+          ]
+        }
+      }
+    }
+  }
+}
